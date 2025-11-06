@@ -60,6 +60,22 @@ class ByteStream {
     this.buffer.push(value & 0xFF);  
     this.offset += 4;
   }
+    
+  writeString(str : string) {
+    const len : number = str.length;
+    this.writeInt(len);
+    for (let i = 0; i < len; i++)
+        this.buffer.push(str.charCodeAt(i))
+    this.offset += len;
+  }
+
+  readString() {
+    const len = this.readInt();
+    let str : string = '';
+    for (let i = 0; i < len; i++)
+      str += String.fromCharCode(this.buffer[this.offset++])
+    return str
+  }
 }
 
 let bs = new ByteStream()
