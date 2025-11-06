@@ -11,9 +11,16 @@ class ByteStream {
     this.bitoffset = 0  
   }
   
-  print() {
+  print_bin() {
     const binaryString = Array.from(this.buffer)
       .map(b => `0b${b.toString(2).padStart(8, '0')}`)
+      .join(' ');
+    console.log(binaryString)
+  }
+
+  print_hexa() {
+    const binaryString = Array.from(this.buffer)
+      .map(b => `0x${b.toString(16).padStart(2, '0')}`)
       .join(' ');
     console.log(binaryString)
   }
