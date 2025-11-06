@@ -1,2 +1,2 @@
 # ByteStream
-Bytestream experimentation for a certain game *wink winkI*
+Bytestream experimentation for a certain game *wink wink*
