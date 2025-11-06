@@ -76,6 +76,11 @@ class ByteStream {
       str += String.fromCharCode(this.buffer[this.offset++])
     return str
   }
+
+  readU32() {
+    let i32 = this.readInt();
+    return i32 >>> 0
+  }
 }
 
 let bs = new ByteStream()
